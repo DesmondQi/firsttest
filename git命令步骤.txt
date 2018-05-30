@@ -1,0 +1,24 @@
+- 创建一个新建项目：（在本地中没有代码）
+- 在GitHub的上创建一个新的项目仓库（远程仓库）
+- 在本地创建一个新的本地仓库
+	- 初始化本地仓库 git init
+	- 创建一个描述文件README.md  echo "需要填充的内容" >> README.md
+	- 从工作区到缓存区 git commit -m "提交的日志"(把当前索引中index的所有改动全部添加到本地仓库中)
+	- 将本地仓库和远程仓库建立联系 git remote add origin https://github.com/han0bo/test.git
+	- 将本地仓库中的数据推送到远程仓库中 git push -u origin master
+
+- 创建一个项目，项目本身已经存在
+	- git clone https://github.com/han0bo/test.git
+	- 查看当前项目中远程仓库地址：git remote -v
+	- 删除当前项目中的远程仓库地址：git remote rm origin
+
+- 更新数据：（当前的项目本身已经是没有任何问题的，本地仓库和远程仓库的连接已经建立，git的初始化已经完成）
+	- git add . （把当前所有更改了的文化添加到缓存区）
+	- git commit -m "日志信息" (把当前缓存区的内容添加到缓存区)
+	- git push -u origin master (把本地仓库的内容提交到远程仓库)
+
+- git status:表示获取当前本地仓库和工作区的改变情况
+  - 如果工作区，本地仓库，远程仓库的内容是一直，Your branch is up-to-date with 'origin/master'.nothing to commit, working tree clean
+  - 如果工作区改变了，本地仓库和远程仓库没有更新，那么这时候显示红色字体，并且告诉我们的具体哪一个文件被修改了
+  - 如果工作区和缓存区都发生了变换，本地仓库和远程仓库没有更新,显示绿色文字，并且告诉我们哪一个文件被修改了
+  - 如果工作区，缓存区，本地仓库都更新了，这时候，会告诉我们当前的版本在'origin/master'之前，所以我们这时候应该提交代码push
